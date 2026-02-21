@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-6">
-              <Logo variant="light" size="md" showSubtitle />
+              <Logo variant="light" size="md" />
             </div>
             <p className="text-sm font-light text-sand/70 leading-relaxed max-w-[340px]">
               La ejecución de un restaurante de lujo, en el escenario que tú elijas. Alta

@@ -8,7 +8,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Pillars from './components/Pillars';
 import WhyUs from './components/WhyUs';
-import CtaBanner from './components/CtaBanner';
+
 import FormularioSection from './components/FormularioSection';
 import Footer from './components/Footer';
 

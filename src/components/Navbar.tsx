@@ -83,7 +83,7 @@ export default function Navbar() {
             }`}
           aria-hidden={!menuOpen}
         >
-          <Logo variant="dark" size="lg" showSubtitle />
+          <Logo variant="dark" size="lg" />
 
           {navLinks.map((link) => (
             <a

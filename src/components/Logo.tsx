@@ -1,18 +1,14 @@
 interface LogoProps {
   variant?: 'dark' | 'light';
-  showSubtitle?: boolean;
   className?: string;
   size?: 'sm' | 'md' | 'lg';
 }
 
 export default function Logo({
   variant = 'dark',
-  showSubtitle = false,
   className = '',
   size = 'md',
 }: LogoProps) {
-  const subtitleFill = variant === 'dark' ? '#1A1A1A' : '#FAF8F5';
-
   const sizeClasses = {
     sm: 'h-6',
     md: 'h-9',
