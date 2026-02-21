@@ -8,19 +8,19 @@ const pillars = [
   {
     title: 'Staff de Élite',
     subtitle: 'Equipo formado en alta hostelería y protocolo internacional para un servicio sin fricciones.',
-    image: 'public/images_marquee/personal.webp',
+    image: '/images_marquee/personal.webp',
     alt: 'Personal profesional de catering en uniforme',
   },
   {
-    title: 'Localizaciones Exclusivas',
+    title: 'Sitios Exclusivos',
     subtitle: 'Acceso a entornos singulares que refuerzan el prestigio de su convocatoria.',
-    image: 'public/images_marquee/ceviche.webp',
+    image: '/images_marquee/ceviche.webp',
     alt: 'Lugar exclusivo decorado para evento premium',
   },
   {
     title: 'Cocina Peruana In-Situ',
     subtitle: 'Elaboración íntegra en el lugar del evento para garantizar la frescura y la complejidad de los sabores que definen nuestra gastronomía.',
-    image: 'public/images_marquee/cocina_aire_libre.webp',
+    image: '/images_marquee/cocina_aire_libre.webp',
     alt: 'Chef preparando gastronomía de autor en el lugar del evento',
   },
 ];

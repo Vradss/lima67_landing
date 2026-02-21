@@ -12,7 +12,7 @@ const services = [
     description:
       'Protocolo de excelencia y sabores de origen para recepciones diplomáticas donde la imagen de su institución es la prioridad.',
     image:
-      'public/images_marquee/catering.webp',
+      '/images_marquee/catering.webp',
     alt: 'Recepción diplomática con servicio de protocolo',
   },
   {
@@ -21,7 +21,7 @@ const services = [
     description:
       'Logística ejecutiva y menús de autor diseñados para juntas de alta dirección que exigen discreción y tiempos exactos.',
     image:
-      'public/images/corporativo.webp',
+      '/images/corporativo.webp',
     alt: 'Cena corporativa elegante con servicio de catering',
   },
   {
@@ -30,7 +30,7 @@ const services = [
     description:
       'La intimidad de su residencia convertida en un restaurante de lujo con servicio exclusivo y platos de firma con herencia peruana.',
     image:
-      'public/images/privado2.webp',
+      '/images/privado2.webp',
     alt: 'Evento privado exclusivo en residencia de lujo',
   },
 ];

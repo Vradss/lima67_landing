@@ -70,7 +70,7 @@ export default function FormularioSection() {
         const dimension = dimensionOptions.find((d) => d.id === form.dimension)?.label ?? '';
         const msg = `Hola Fernando, me gustaría solicitar una propuesta para un evento.
 
-📋 Tipo de protocolo: ${protocolo}
+📋 Tipo de evento: ${protocolo}
 👥 Dimensión: ${dimension}
 📅 Fecha aproximada: ${form.fecha}
 📍 Zona / Ciudad: ${form.zona}
@@ -167,7 +167,7 @@ export default function FormularioSection() {
                                         id="form-heading"
                                         className="font-display text-[clamp(1.4rem,2.5vw,1.9rem)] font-bold leading-[1.15] tracking-[-0.02em] text-charcoal mb-10"
                                     >
-                                        Empecemos por el contexto. ¿Qué tipo de protocolo requiere su convocatoria?
+                                        Empecemos por el contexto. ¿Qué tipo de evento requiere ?
                                     </h3>
                                     <div className="flex flex-col gap-3">
                                         {protocoloOptions.map((opt) => {
