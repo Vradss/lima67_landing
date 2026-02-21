@@ -1,0 +1,93 @@
+import { useEffect, useRef } from 'react';
+
+const images = [
+  { src: '/images_marquee/catering.webp', alt: 'Servicio de catering Lima67' },
+  { src: '/images_marquee/causa.webp', alt: 'Causa limeña' },
+  { src: '/images_marquee/fernando_banderas.webp', alt: 'Fernando Banderas' },
+  { src: '/images_marquee/ceviche.webp', alt: 'Ceviche peruano' },
+  { src: '/images_marquee/pisco-foto.webp', alt: 'Pisco peruano' },
+  { src: '/images_marquee/cocina_aire_libre.webp', alt: 'Cocina al aire libre Lima67' },
+  { src: '/images_marquee/fernando_valderrama.webp', alt: 'Fernando Valderrama' },
+  { src: '/images_marquee/empanadas.webp', alt: 'Empanadas' },
+  { src: '/images_marquee/personal.webp', alt: 'Equipo Lima67' },
+  { src: '/images_marquee/pisco_botella.webp', alt: 'Botella de pisco' },
+  { src: '/images_marquee/trabajadora.webp', alt: 'Trabajadora Lima67' },
+];
+
+// Duplicate the array to create seamless infinite loop
+const marqueeImages = [...images, ...images];
+
+export default function ImagePanel() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let animationId: number;
+    let position = 0;
+    const speed = 0.5; // px per frame
+
+    // Calculate the width of a single set of images (half of full track)
+    const singleSetWidth = track.scrollWidth / 2;
+
+    const animate = () => {
+      position += speed;
+      // Reset when we've scrolled through one full set
+      if (position >= singleSetWidth) {
+        position = 0;
+      }
+      track.style.transform = `translateX(-${position}px)`;
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+
+    // Pause on hover
+    const container = track.parentElement;
+    const pause = () => {
+      cancelAnimationFrame(animationId);
+    };
+    const resume = () => {
+      animationId = requestAnimationFrame(animate);
+    };
+
+    container?.addEventListener('mouseenter', pause);
+    container?.addEventListener('mouseleave', resume);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      container?.removeEventListener('mouseenter', pause);
+      container?.removeEventListener('mouseleave', resume);
+    };
+  }, []);
+
+  return (
+    <section
+      aria-label="Galería de eventos"
+      className="w-full overflow-hidden py-8 md:py-14"
+    >
+      <div
+        ref={trackRef}
+        className="flex gap-4 w-max"
+        style={{ willChange: 'transform' }}
+      >
+        {marqueeImages.map((img, i) => (
+          <div
+            key={i}
+            className="flex-shrink-0 rounded-xl overflow-hidden"
+            style={{ width: 450, height: 500 }}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover"
+              loading={i < images.length ? 'eager' : 'lazy'}
+              draggable={false}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
